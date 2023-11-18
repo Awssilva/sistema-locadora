@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Locacao extends Model
 {
     use HasFactory;
+
+    protected $table = 'locacao';
+    protected $primaryKey = 'id_locacao';
+    protected $guarded = [];  
+    public $timestamps = false;
 }

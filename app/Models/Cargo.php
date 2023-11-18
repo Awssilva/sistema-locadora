@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Cargo extends Model
 {
     use HasFactory;
+
+    protected $table = 'cargo';
+    protected $primaryKey = 'id_cargo';
+    protected $guarded = [];  
+    public $timestamps = false;
 }
