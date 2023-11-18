@@ -19,6 +19,15 @@ class VeiculoController extends Controller
         $veiculo->ano = $request->ano;
         $veiculo->quilometragem = $request->quilometragem;
         $veiculo ->data_cadastro = date('d/m/Y H:i');
+        //Verifica se o arquivo é do tipo image
+        if($request->hasFile('image') && $request->file('image')->isValid()){
+            $requestImage = $request->imagem_veiculo;
+            $extensao = $requestImage->extension();
+            $nome_imagem = md5($requestImage->getClientOriginalName() . strtotime('now')) . "." . $extensao;
+            $requestImage->move(public_path('img/veiculos'), $nome_imagem);
+            $veiculo->image = $nome_imagem;
+        }
+                
 
         $veiculo->save();
 
