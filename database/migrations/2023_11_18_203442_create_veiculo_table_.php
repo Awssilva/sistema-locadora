@@ -23,7 +23,7 @@ return new class extends Migration
             $table->string('ano', 50);
             $table->integer('quilometragem');
             $table->date('data_cadastro');
-            $table->string('image');
+            $table->string('image')->nullable();
             $table->timestamps();
         });
     }
