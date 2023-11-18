@@ -18,6 +18,7 @@ class FeedbackController extends Controller
         $feedback->id_feedback = $request->id_feedback;
         $feedback->id_cliente = $request->id_cliente;
         $feedback->id_veiculo = $request->id_veiculo;
+        $feedback->nivel_avaliacao = $request->nivel_avaliacao;
         $feedback->mensagem = $request->mensagem;
         $feedback->data_cadastro = date('d/m/Y H:i');
 
