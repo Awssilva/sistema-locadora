@@ -13,8 +13,8 @@ class FuncionarioController extends Controller
 
         $funcionario->id_funcionario = $request->id_funcionario;
         $funcionario->id_unidade_locadora = $request->id_unidade_locadora;
+        $funcionario->id_cargo = $request->id_cargo;
         $funcionario->nome = $request->nome;
-        $funcionario->cargo = $request->cargo;
         $funcionario->data_cadastro = date('d/m/Y H:i');
 
         
