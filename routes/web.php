@@ -30,10 +30,10 @@ Route::prefix('/cliente')->group(function(){
 //Rotas do CRUD Funcinario
 Route::prefix('/funcionario')->group(function(){
     Route::get('/cadastrar', [FuncionarioController::class, 'create'])->name('funcionario.view-cadastrar');
-    Route::post('/cadastrar', [FuncionarioController::class, 'cadatrarFuncionario'])->name('funcionario.cadastrar');
+    Route::post('/cadastrar', [FuncionarioController::class, 'cadastrarFuncionario'])->name('funcionario.cadastrar');
     Route::get('/consultar', [FuncionarioController::class, 'consultarFuncionario'])->name('funcionario.consultar');
     Route::get('/editar/{id_funcionario?}', [FuncionarioController::class, 'editarFuncionario'])->name('funcionario.editar');
-    Route::put('/atualizar/{id_funcionario}', [FuncionarioController::class, 'atualizaFuncionario'])->name('funcionario.atualizar');
+    Route::put('/atualizar/{id_funcionario}', [FuncionarioController::class, 'atualizarFuncionario'])->name('funcionario.atualizar');
     Route::delete('/deletar/{id_funcionario}', [FuncionarioController::class, 'deletarFuncionario'])->name('funcionario.deletar');
 });
 
@@ -41,49 +41,49 @@ Route::prefix('/funcionario')->group(function(){
 //Rotas do CRUD UnidadeLocadora
 Route::prefix('/unidadeLocadora')->group(function(){
     Route::get('/cadastrar', [UnidadeLocadoraController::class, 'create'])->name('unidadeLocadora.view-cadastrar');
-    Route::post('/cadastrar', [UnidadeLocadoraController::class, 'cadatrarUnidadeLocadora'])->name('unidadeLocadora.cadastrar');
+    Route::post('/cadastrar', [UnidadeLocadoraController::class, 'cadastrarUnidadeLocadora'])->name('unidadeLocadora.cadastrar');
     Route::get('/consultar', [UnidadeLocadoraController::class, 'consultarUnidadeLocadora'])->name('unidadeLocadora.consultar');
     Route::get('/editar/{id_unidade_locadora?}', [UnidadeLocadoraController::class, 'editarUnidadeLocadora'])->name('unidadeLocadora.editar');
-    Route::put('/atualizar/{id_unidade_locadora}', [UnidadeLocadoraController::class, 'atualizaUnidadeLocadora'])->name('unidadeLocadora.atualizar');
+    Route::put('/atualizar/{id_unidade_locadora}', [UnidadeLocadoraController::class, 'atualizarUnidadeLocadora'])->name('unidadeLocadora.atualizar');
     Route::delete('/deletar/{id_unidade_locadora}', [UnidadeLocadoraController::class, 'deletarUnidadeLocadora'])->name('unidadeLocadora.deletar');
 });
 
 //Rotas do CRUD Veiculo
 Route::prefix('/veiculo')->group(function(){
     Route::get('/cadastrar', [VeiculoController::class, 'create'])->name('veiculo.view-cadastrar');
-    Route::post('/cadastrar', [VeiculoController::class, 'cadatrarVeiculo'])->name('veiculo.cadastrar');
+    Route::post('/cadastrar', [VeiculoController::class, 'cadastrarVeiculo'])->name('veiculo.cadastrar');
     Route::get('/consultar', [VeiculoController::class, 'consultarVeiculo'])->name('veiculo.consultar');
     Route::get('/editar/{id_veiculo?}', [VeiculoController::class, 'editarVeiculo'])->name('veiculo.editar');
-    Route::put('/atualizar/{id_veiculo}', [VeiculoController::class, 'atualizaVeiculo'])->name('veiculo.atualizar');
+    Route::put('/atualizar/{id_veiculo}', [VeiculoController::class, 'atualizarVeiculo'])->name('veiculo.atualizar');
     Route::delete('/deletar/{id_veiculo}', [VeiculoController::class, 'deletarVeiculo'])->name('veiculo.deletar');
 });
 
 //Rotas do CRUD Locacao
 Route::prefix('/locacao')->group(function(){
     Route::get('/cadastrar', [LocacaoController::class, 'create'])->name('locacao.view-cadastrar');
-    Route::post('/cadastrar', [LocacaoController::class, 'cadatrarLocacao'])->name('locacao.cadastrar');
+    Route::post('/cadastrar', [LocacaoController::class, 'cadastrarLocacao'])->name('locacao.cadastrar');
     Route::get('/consultar', [LocacaoController::class, 'consultarLocacao'])->name('locacao.consultar');
     Route::get('/editar/{id_locacao?}', [LocacaoController::class, 'editarLocacao'])->name('locacao.editar');
-    Route::put('/atualizar/{id_locacao}', [LocacaoController::class, 'atualizaLocacao'])->name('locacao.atualizar');
+    Route::put('/atualizar/{id_locacao}', [LocacaoController::class, 'atualizarLocacao'])->name('locacao.atualizar');
     Route::delete('/deletar/{id_locacao}', [LocacaoController::class, 'deletarLocacao'])->name('locacao.deletar');
 });
 
 //Rotas do CRUD Feedback
 Route::prefix('/feedback')->group(function(){
     Route::get('/cadastrar', [FeedbackController::class, 'create'])->name('feedback.view-cadastrar');
-    Route::post('/cadastrar', [FeedbackController::class, 'cadatrarFeedback'])->name('feedback.cadastrar');
+    Route::post('/cadastrar', [FeedbackController::class, 'cadastrarFeedback'])->name('feedback.cadastrar');
     Route::get('/consultar', [FeedbackController::class, 'consultarFeedback'])->name('feedback.consultar');
     Route::get('/editar/{id_feedback?}', [FeedbackController::class, 'editarFeedback'])->name('feedback.editar');
-    Route::put('/atualizar/{id_feedback}', [FeedbackController::class, 'atualizaFeedback'])->name('feedback.atualizar');
+    Route::put('/atualizar/{id_feedback}', [FeedbackController::class, 'atualizarFeedback'])->name('feedback.atualizar');
     Route::delete('/deletar/{id_feedback}', [FeedbackController::class, 'deletarFeedback'])->name('feedback.deletar');
 });
 
 //Rotas do CRUD Cargo
 Route::prefix('/cargo')->group(function(){
     Route::get('/cadastrar', [CargoController::class, 'create'])->name('cargo.view-cadastrar');
-    Route::post('/cadastrar', [CargoController::class, 'cadatrarCargo'])->name('cargo.cadastrar');
+    Route::post('/cadastrar', [CargoController::class, 'cadastrarCargo'])->name('cargo.cadastrar');
     Route::get('/consultar', [CargoController::class, 'consultarCargo'])->name('cargo.consultar');
     Route::get('/editar/{id_cargo?}', [CargoController::class, 'editarCargo'])->name('cargo.editar');
-    Route::put('/atualizar/{id_cargo}', [CargoController::class, 'atualizaCargo'])->name('cargo.atualizar');
+    Route::put('/atualizar/{id_cargo}', [CargoController::class, 'atualizarCargo'])->name('cargo.atualizar');
     Route::delete('/deletar/{id_cargo}', [CargoController::class, 'deletarCargo'])->name('cargo.deletar');
 });
