@@ -239,37 +239,37 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link d-flex align-items-center gap-2" href="dashboard/cliente/menu">
+              <a class="nav-link d-flex align-items-center gap-2" href="{{ route('cliente.view-menu') }}">
                 <i class="bi bi-person-fill"></i>
                 Clientes
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link d-flex align-items-center gap-2" href="dashboard/veiculo/menu">
+              <a class="nav-link d-flex align-items-center gap-2" href="{{ route('veiculo.view-menu') }}">
                <i class="bi bi-car-front-fill"></i>
                 Veiculos
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link d-flex align-items-center gap-2" href="dashboard/funcionario">
+              <a class="nav-link d-flex align-items-center gap-2"href="{{ route('funcionario.view-menu') }}">
                 <svg class="bi"><use xlink:href="#people"/></svg>
                 Funcionarios
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link d-flex align-items-center gap-2" href="dashboard/unidadeLocadora">
+              <a class="nav-link d-flex align-items-center gap-2" href="{{ route('unidadeLocadora.view-menu') }}">
                <i class="bi bi-building"></i>
                 Unidades
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link d-flex align-items-center gap-2" href="dashboard/locacao">
+              <a class="nav-link d-flex align-items-center gap-2"href="{{ route('locacao.view-menu') }}">
                <i class="bi bi-plus-circle"></i>
                 Locação
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link d-flex align-items-center gap-2" href="dashboard/feedback">
+              <a class="nav-link d-flex align-items-center gap-2"href="{{ route('feedback.view-menu') }}">
                <i class="bi bi-star-fill"></i>
                 Feedback
               </a>
