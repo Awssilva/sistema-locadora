@@ -1,7 +1,13 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\CLienteController;
+use App\Http\Controllers\FuncionarioController;
+use App\Http\Controllers\UnidadeLocadoraController;
+use App\Http\Controllers\VeiculoController;
+use App\Http\Controllers\LocacaoController;
+use App\Http\Controllers\FeedbackController;
+use App\Http\Controllers\CargoController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,13 +19,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+Route::get('/dashboard', function () {
     return view('dashboard_main');
 });
 
 //Rotas do CRUD Cliente
-Route::prefix('/cliente')->group(function(){
-    Route::get('/cadastrar', [ClienteController::class, 'create'])->name('cliente.view-cadastrar');
+Route::prefix('dashboard/cliente')->group(function(){
+    Route::get('/menu', [ClienteController::class, 'create'])->name('cliente.view-cadastrar');
     Route::post('/cadastrar', [ClienteController::class, 'cadastrarCliente'])->name('cliente.cadastrar');
     Route::get('/consultar', [ClienteController::class, 'consultarCliente'])->name('cliente.consultar');
     Route::get('/editar/{id_cliente?}', [ClienteController::class, 'editarCliente'])->name('cliente.editar');
@@ -28,8 +34,8 @@ Route::prefix('/cliente')->group(function(){
 });
 
 //Rotas do CRUD Funcinario
-Route::prefix('/funcionario')->group(function(){
-    Route::get('/cadastrar', [FuncionarioController::class, 'create'])->name('funcionario.view-cadastrar');
+Route::prefix('dashboard/funcionario')->group(function(){
+    Route::get('/menu', [FuncionarioController::class, 'create'])->name('funcionario.view-cadastrar');
     Route::post('/cadastrar', [FuncionarioController::class, 'cadastrarFuncionario'])->name('funcionario.cadastrar');
     Route::get('/consultar', [FuncionarioController::class, 'consultarFuncionario'])->name('funcionario.consultar');
     Route::get('/editar/{id_funcionario?}', [FuncionarioController::class, 'editarFuncionario'])->name('funcionario.editar');
@@ -39,8 +45,8 @@ Route::prefix('/funcionario')->group(function(){
 
 
 //Rotas do CRUD UnidadeLocadora
-Route::prefix('/unidadeLocadora')->group(function(){
-    Route::get('/cadastrar', [UnidadeLocadoraController::class, 'create'])->name('unidadeLocadora.view-cadastrar');
+Route::prefix('dashboard/unidadeLocadora')->group(function(){
+    Route::get('/menu', [UnidadeLocadoraController::class, 'create'])->name('unidadeLocadora.view-cadastrar');
     Route::post('/cadastrar', [UnidadeLocadoraController::class, 'cadastrarUnidadeLocadora'])->name('unidadeLocadora.cadastrar');
     Route::get('/consultar', [UnidadeLocadoraController::class, 'consultarUnidadeLocadora'])->name('unidadeLocadora.consultar');
     Route::get('/editar/{id_unidade_locadora?}', [UnidadeLocadoraController::class, 'editarUnidadeLocadora'])->name('unidadeLocadora.editar');
@@ -49,8 +55,8 @@ Route::prefix('/unidadeLocadora')->group(function(){
 });
 
 //Rotas do CRUD Veiculo
-Route::prefix('/veiculo')->group(function(){
-    Route::get('/cadastrar', [VeiculoController::class, 'create'])->name('veiculo.view-cadastrar');
+Route::prefix('dashboard/veiculo')->group(function(){
+    Route::get('/menu', [VeiculoController::class, 'create'])->name('veiculo.view-cadastrar');
     Route::post('/cadastrar', [VeiculoController::class, 'cadastrarVeiculo'])->name('veiculo.cadastrar');
     Route::get('/consultar', [VeiculoController::class, 'consultarVeiculo'])->name('veiculo.consultar');
     Route::get('/editar/{id_veiculo?}', [VeiculoController::class, 'editarVeiculo'])->name('veiculo.editar');
@@ -59,8 +65,8 @@ Route::prefix('/veiculo')->group(function(){
 });
 
 //Rotas do CRUD Locacao
-Route::prefix('/locacao')->group(function(){
-    Route::get('/cadastrar', [LocacaoController::class, 'create'])->name('locacao.view-cadastrar');
+Route::prefix('dashboard/locacao')->group(function(){
+    Route::get('/menu', [LocacaoController::class, 'create'])->name('locacao.view-cadastrar');
     Route::post('/cadastrar', [LocacaoController::class, 'cadastrarLocacao'])->name('locacao.cadastrar');
     Route::get('/consultar', [LocacaoController::class, 'consultarLocacao'])->name('locacao.consultar');
     Route::get('/editar/{id_locacao?}', [LocacaoController::class, 'editarLocacao'])->name('locacao.editar');
@@ -69,8 +75,8 @@ Route::prefix('/locacao')->group(function(){
 });
 
 //Rotas do CRUD Feedback
-Route::prefix('/feedback')->group(function(){
-    Route::get('/cadastrar', [FeedbackController::class, 'create'])->name('feedback.view-cadastrar');
+Route::prefix('dashboard/feedback')->group(function(){
+    Route::get('/menu', [FeedbackController::class, 'create'])->name('feedback.view-cadastrar');
     Route::post('/cadastrar', [FeedbackController::class, 'cadastrarFeedback'])->name('feedback.cadastrar');
     Route::get('/consultar', [FeedbackController::class, 'consultarFeedback'])->name('feedback.consultar');
     Route::get('/editar/{id_feedback?}', [FeedbackController::class, 'editarFeedback'])->name('feedback.editar');
@@ -79,8 +85,8 @@ Route::prefix('/feedback')->group(function(){
 });
 
 //Rotas do CRUD Cargo
-Route::prefix('/cargo')->group(function(){
-    Route::get('/cadastrar', [CargoController::class, 'create'])->name('cargo.view-cadastrar');
+Route::prefix('dashboard/cargo')->group(function(){
+    Route::get('/menu', [CargoController::class, 'create'])->name('cargo.view-cadastrar');
     Route::post('/cadastrar', [CargoController::class, 'cadastrarCargo'])->name('cargo.cadastrar');
     Route::get('/consultar', [CargoController::class, 'consultarCargo'])->name('cargo.consultar');
     Route::get('/editar/{id_cargo?}', [CargoController::class, 'editarCargo'])->name('cargo.editar');
