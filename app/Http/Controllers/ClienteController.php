@@ -8,7 +8,7 @@ use App\Models\Cliente;
 class ClienteController extends Controller
 {
     public function create(){
-        return view('clientes.cadastrar');
+        return view('cliente.cadastrar');
     }
     
     public function cadastrarCliente(Request $request)
