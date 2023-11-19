@@ -72,6 +72,11 @@
             @endforeach
         </tbody>
     </table>
+    @endif
+
+    @if (session('alertaSucesso'))
+
+        @include('components.alerta_sucesso')
 
     @endif
 

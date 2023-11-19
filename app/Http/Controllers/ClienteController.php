@@ -46,12 +46,12 @@ class ClienteController extends Controller
     {
         $cliente = $request->all();
         Cliente::findOrFail($request->id_cliente)->update($cliente);
-        return redirect(route('cliente.consultar'));//->with('edicaoRealizada', 'Cadastro atualizado com sucesso!');
+        return redirect(route('cliente.consultar'))->with('alertaSucesso', 'Registro atualizado com sucesso!');
     }
 
     public function deletarCliente($id_cliente)
     {
         Cliente::findOrFail($id_cliente)->delete();
-        return redirect(route('cliente.consultar'));//->with('exclusaoRealizada', 'Cadastro excluído com sucesso!');
+        return redirect(route('cliente.consultar'))->with('alertaSucesso', 'Registro excluído com sucesso!');
     }
 }
