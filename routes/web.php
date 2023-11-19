@@ -20,10 +20,10 @@ Route::get('/', function () {
 //Rotas do CRUD Cliente
 Route::prefix('/cliente')->group(function(){
     Route::get('/cadastrar', [ClienteController::class, 'create'])->name('cliente.view-cadastrar');
-    Route::post('/cadastrar', [ClienteController::class, 'cadatrarCliente'])->name('cliente.cadastrar');
+    Route::post('/cadastrar', [ClienteController::class, 'cadastrarCliente'])->name('cliente.cadastrar');
     Route::get('/consultar', [ClienteController::class, 'consultarCliente'])->name('cliente.consultar');
     Route::get('/editar/{id_cliente?}', [ClienteController::class, 'editarCliente'])->name('cliente.editar');
-    Route::put('/atualizar/{id_cliente}', [ClienteController::class, 'atualizaCliente'])->name('cliente.atualizar');
+    Route::put('/atualizar/{id_cliente}', [ClienteController::class, 'atualizarCliente'])->name('cliente.atualizar');
     Route::delete('/deletar/{id_cliente}', [ClienteController::class, 'deletarCliente'])->name('cliente.deletar');
 });
 
