@@ -14,21 +14,21 @@
             <div class="mb-3 row">
                 <div class="col-md-6">
                     <label for="nome" class="form-label col-md-2">Nome</label>
-                    <input type="text" class="form-control" id="nome" name="nome">
+                    <input type="text" class="form-control" id="nome" name="nome" required>
                 </div>
                 <div class="col-md-6">
                     <label for="cpf" class="form-label col-md-2">CPF</label>
-                    <input type="text" class="form-control" id="cpf" name="cpf">
+                    <input type="text" class="form-control" id="cpf" name="cpf" required>
                 </div>
             </div>
             <div class="mb-3 row">
                 <div class="col-md-6">
                     <label for="endereco" class="form-label col-md-2">Endereço</label>
-                    <input type="text" class="form-control" id="endereco" name="endereco">
+                    <input type="text" class="form-control" id="endereco" name="endereco" required>
                 </div>
                 <div class="col-md-6">
                     <label for="telefone" class="form-label col-md-2">Telefone</label>
-                    <input type="text" class="form-control" id="telefone" name="telefone">
+                    <input type="text" class="form-control" id="telefone" name="telefone" required>
                 </div>
             </div>
             <div class="d-flex justify-content-end">
