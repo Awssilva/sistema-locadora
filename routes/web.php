@@ -20,7 +20,7 @@ use App\Http\Controllers\CargoController;
 */
 
 Route::get('/dashboard', function () {
-    return view('dashboard_main');
+    return view('dashboard');
 });
 
 //Rotas do CRUD Cliente
