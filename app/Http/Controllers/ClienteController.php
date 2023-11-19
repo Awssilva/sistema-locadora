@@ -28,7 +28,7 @@ class ClienteController extends Controller
 
         $cliente->save();
 
-        return redirect(route('cliente.view-menu'));//->with('cadastroRealizado', 'Cadastro realizado com sucesso!');
+        return redirect(route('cliente.view-menu'))->with('alertaSucesso', 'Cadastro realizado com sucesso!');
     }
 
     public function consultarCliente()
@@ -46,12 +46,12 @@ class ClienteController extends Controller
     {
         $cliente = $request->all();
         Cliente::findOrFail($request->id_cliente)->update($cliente);
-        return redirect(route('cliente.consultar'))->with('alertaSucesso', 'Registro atualizado com sucesso!');
+        return redirect(route('cliente.consultar'))->with('alertaSucesso', 'Cadastro atualizado com sucesso!');
     }
 
     public function deletarCliente($id_cliente)
     {
         Cliente::findOrFail($id_cliente)->delete();
-        return redirect(route('cliente.consultar'))->with('alertaSucesso', 'Registro excluído com sucesso!');
+        return redirect(route('cliente.consultar'))->with('alertaSucesso', 'Cadastro excluído com sucesso!');
     }
 }
