@@ -1,8 +1,8 @@
 @extends('dashboard_main')
 
 @section('content')
-    <div class="info-section bg-body-tertiary d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center">
-        <h2 class="mb-0">Clientes</h2>
+    <div class="info-section bg-body-tertiary d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center text-center">
+        <h2 class="mb-0"><i class="bi bi-person-fill me-2"></i>Clientes</h2>
         <div class="d-flex gap-2">
             <a href="{{ route('cliente.cadastro') }}" class="btn btn-success" id="btnNovoCliente"><i class="bi bi-person-fill-add"></i>Novo Cliente</a>
         </div>
@@ -29,7 +29,7 @@
     @if( isset($clientes) )
 
     <div class="info-section bg-body-tertiary">
-        <h2>Consulta de Clientes</h2>
+        <h2><i class="bi bi-search me-2"></i>Consulta de Clientes</h2>
     </div>
 
     @if(count($clientes) == 0)
