@@ -1,13 +1,13 @@
 @extends('dashboard_main')
 
 @section('content')
-    <div class="info-section bg-body-tertiary">
-        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center">
-            <h2>Clientes</h2>    
-            <a href="{{ route('cliente.cadastro') }}" class="btn btn-success" id="btnCadastrar"><i class="bi bi-person-fill-add"></i>Novo Cliente</a>
+    <div class="info-section bg-body-tertiary d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center">
+        <h2 class="mb-0">Clientes</h2>
+        <div class="d-flex gap-2">
+            <a href="{{ route('cliente.cadastro') }}" class="btn btn-success" id="btnNovoCliente"><i class="bi bi-person-fill-add"></i>Novo Cliente</a>
         </div>
     </div>
-    <div class="painel-acoes">
+    <div class="painel-acoes bg-body-tertiary p-3 info-section">
         <form action="{{ route('cliente.consultar') }}" method="GET" enctype="multipart/form-data">
             @csrf
             <div class="mb-3 row">
@@ -39,7 +39,7 @@
     @endif
 
     <table class="table">
-        <thead>
+        <thead class="bg-tertiary">
             <tr>
                 <th scope="col">ID</th>
                 <th scope="col">Nome</th>
