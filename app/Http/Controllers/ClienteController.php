@@ -11,7 +11,7 @@ class ClienteController extends Controller
         return view('cliente.consultar');
     }
 
-    public function create_cadastro(){
+    public function createCadastro(){
         return view('cliente.cadastro');
     }
     
