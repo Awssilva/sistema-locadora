@@ -6,11 +6,20 @@ use Illuminate\Http\Request;
 use App\Models\Veiculo;
 class VeiculoController extends Controller
 {
+
+    public function create(){
+        return view('veiculo.consultar');
+    }
+
+    public function create_cadastro(){
+        return view('veiculo.cadastro');
+    }
+
     public function cadastrarVeiculo(Request $request)
     {
         $veiculo = new Veiculo();
 
-        $veiculo->id_veiculo = $request->id_veiculo;
+        //$veiculo->id_veiculo = $request->id_veiculo;
         $veiculo->id_unidade_locadora = $request->id_unidade_locadora;
         $veiculo->placa = $request->placa;
         $veiculo->nome = $request->nome;
