@@ -237,13 +237,13 @@
             <li class="nav-item">
               <a class="nav-link d-flex align-items-center gap-2" href="{{ route('veiculo.view-menu') }}">
                <i class="bi bi-car-front-fill"></i>
-                Veiculos
+                Veículos
               </a>
             </li>
             <li class="nav-item">
               <a class="nav-link d-flex align-items-center gap-2"href="{{ route('funcionario.view-menu') }}">
                 <svg class="bi"><use xlink:href="#people"/></svg>
-                Funcionarios
+                Funcionários
               </a>
             </li>
             <li class="nav-item">
