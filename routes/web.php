@@ -49,11 +49,12 @@ Route::prefix('dashboard/funcionario')->group(function(){
 //Rotas do CRUD UnidadeLocadora
 Route::prefix('dashboard/unidadeLocadora')->group(function(){
     Route::get('/menu', [UnidadeLocadoraController::class, 'create'])->name('unidadeLocadora.view-menu');
+    Route::get('/cadastro', [UnidadeLocadoraController::class, 'createCadastro'])->name('unidadeLocadora.cadastro');
     Route::post('/cadastrar', [UnidadeLocadoraController::class, 'cadastrarUnidadeLocadora'])->name('unidadeLocadora.cadastrar');
-    Route::get('/consultar', [UnidadeLocadoraController::class, 'consultarUnidadeLocadora'])->name('unidadeLocadora.consultar');
+    Route::get('/consulta', [UnidadeLocadoraController::class, 'consultarUnidadeLocadora'])->name('unidadeLocadora.consultar');
     Route::get('/editar/{id_unidade_locadora?}', [UnidadeLocadoraController::class, 'editarUnidadeLocadora'])->name('unidadeLocadora.editar');
     Route::put('/atualizar/{id_unidade_locadora}', [UnidadeLocadoraController::class, 'atualizarUnidadeLocadora'])->name('unidadeLocadora.atualizar');
-    Route::delete('/deletar/{id_unidade_locadora}', [UnidadeLocadoraController::class, 'deletarUnidadeLocadora'])->name('unidadeLocadora.deletar');
+    Route::delete('/deletar/{id_unidade_locadora?}', [UnidadeLocadoraController::class, 'deletarUnidadeLocadora'])->name('unidadeLocadora.deletar');
 });
 
 //Rotas do CRUD Veiculo
