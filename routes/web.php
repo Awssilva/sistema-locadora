@@ -37,8 +37,9 @@ Route::prefix('dashboard/cliente')->group(function(){
 //Rotas do CRUD Funcinario
 Route::prefix('dashboard/funcionario')->group(function(){
     Route::get('/menu', [FuncionarioController::class, 'create'])->name('funcionario.view-menu');
+    Route::get('/cadastro', [FuncionarioController::class, 'createCadastro'])->name('funcionario.cadastro');
     Route::post('/cadastrar', [FuncionarioController::class, 'cadastrarFuncionario'])->name('funcionario.cadastrar');
-    Route::get('/consultar', [FuncionarioController::class, 'consultarFuncionario'])->name('funcionario.consultar');
+    Route::get('/consulta', [FuncionarioController::class, 'consultarFuncionario'])->name('funcionario.consultar');
     Route::get('/editar/{id_funcionario?}', [FuncionarioController::class, 'editarFuncionario'])->name('funcionario.editar');
     Route::put('/atualizar/{id_funcionario}', [FuncionarioController::class, 'atualizarFuncionario'])->name('funcionario.atualizar');
     Route::delete('/deletar/{id_funcionario}', [FuncionarioController::class, 'deletarFuncionario'])->name('funcionario.deletar');
