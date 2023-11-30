@@ -27,7 +27,7 @@
                 <div class="col-md-6 mb-3">
                     <label for="cargo" class="form-label col-md-2">Unidade</label>
                     <select class="form-select" id="cargo" name="id_unidade_locadora" required>
-                        <option >Selecione a unidade</option>
+                        <option value="">Selecione a unidade</option>
                         @foreach ($unidadesLocadora as $unidadeLocadora)
                             <option value={{ $unidadeLocadora->id_unidade_locadora }}> {{ $unidadeLocadora->cidade . ' - ' . $unidadeLocadora->id_unidade_locadora  }}</option>
                         @endforeach
