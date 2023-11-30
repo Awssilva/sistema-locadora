@@ -29,7 +29,6 @@ class UnidadeLocadoraController extends Controller
 
         $unidadeLocadora->cidade = $request->cidade;
         $unidadeLocadora->estado = $request->estado;
-        $unidadeLocadora->id_funcionario = $request->id_funcionario;
         $unidadeLocadora->data_cadastro = date('Y-m-d H:i:s');
 
         $unidadeLocadora->save();
