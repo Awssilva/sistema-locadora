@@ -22,15 +22,6 @@
                     <label for="estado" class="form-label col-md-2">Estado</label>
                     <input type="text" class="form-control" id="estado" name="estado" value="{{ $unidadeLocadora->estado }}" required>
                 </div>
-                <div class="col-md-6 mb-3">
-                    <label for="gerente" class="form-label col-md-2">Gerente</label>
-                    <select class="form-select" id="gerente" name="id_funcionario" value="{{ $unidadeLocadora->id_funcionario}}" required>
-                        <option >Selecione um gerente</option>
-                        @foreach ($funcionarios as $funcionario)
-                            <option value="{{ $funcionario->id_funcionario }}" <?= $funcionario->id_funcionario ==  $unidadeLocadora->id_funcionario ? "selected" : "" ?>> {{ $funcionario->nome }}</option>
-                        @endforeach
-                    </select>
-                </div>
             </div>
             <div class="d-flex justify-content-end">
                 <button type="submit" class="btn btn-primary">Atualizar</button>

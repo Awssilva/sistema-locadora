@@ -19,15 +19,6 @@
                     <label for="estado" class="form-label col-md-2">Estado</label>
                     <input type="text" class="form-control" id="estado" name="estado" >
                 </div>
-                <div class="col-md-6 mb-3">
-                    <label for="gerente" class="form-label col-md-2">Gerente</label>
-                    <select class="form-select" id="gerente" name="id_funcionario">
-                        <option >Selecione um gerente</option>
-                        @foreach ($funcionarios as $funcionario)
-                            <option value={{ $funcionario->id_funcionario }}> {{ $funcionario->nome }}</option>
-                        @endforeach
-                    </select>
-                </div>
             </div>
             <div class="d-flex justify-content-end">
                 <button type="submit" class="btn btn-primary">Consultar</button>
