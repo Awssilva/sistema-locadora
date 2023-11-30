@@ -60,7 +60,7 @@ Route::prefix('dashboard/unidadeLocadora')->group(function(){
 //Rotas do CRUD Veiculo
 Route::prefix('dashboard/veiculo')->group(function(){
     Route::get('/menu', [VeiculoController::class, 'create'])->name('veiculo.view-menu');
-    Route::get('/cadastro', [VeiculoController::class, 'create_cadastro'])->name('veiculo.cadastro');
+    Route::get('/cadastro', [VeiculoController::class, 'createCadastro'])->name('veiculo.cadastro');
     Route::post('/cadastrar', [VeiculoController::class, 'cadastrarVeiculo'])->name('veiculo.cadastrar');
     Route::get('/consulta', [VeiculoController::class, 'consultarVeiculo'])->name('veiculo.consultar');
     Route::get('/editar/{id_veiculo?}', [VeiculoController::class, 'editarVeiculo'])->name('veiculo.editar');
@@ -71,8 +71,9 @@ Route::prefix('dashboard/veiculo')->group(function(){
 //Rotas do CRUD Locacao
 Route::prefix('dashboard/locacao')->group(function(){
     Route::get('/menu', [LocacaoController::class, 'create'])->name('locacao.view-menu');
+    Route::get('/cadastro', [LocacaoController::class, 'createCadastro'])->name('locacao.cadastro');
     Route::post('/cadastrar', [LocacaoController::class, 'cadastrarLocacao'])->name('locacao.cadastrar');
-    Route::get('/consultar', [LocacaoController::class, 'consultarLocacao'])->name('locacao.consultar');
+    Route::get('/consulta', [LocacaoController::class, 'consultarLocacao'])->name('locacao.consultar');
     Route::get('/editar/{id_locacao?}', [LocacaoController::class, 'editarLocacao'])->name('locacao.editar');
     Route::put('/atualizar/{id_locacao}', [LocacaoController::class, 'atualizarLocacao'])->name('locacao.atualizar');
     Route::delete('/deletar/{id_locacao}', [LocacaoController::class, 'deletarLocacao'])->name('locacao.deletar');
