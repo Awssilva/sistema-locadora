@@ -13,4 +13,13 @@ class UnidadeLocadora extends Model
     protected $primaryKey = 'id_unidade_locadora';
     protected $guarded = [];  
     public $timestamps = false;
+
+    //Método para retornar todos os registros e informações da tabela unidade_locadora.
+    public static function getAllUnidades()
+    {
+        $result = self::select('unidade_locadora.*', 'funcionario.nome')
+                ->join('funcionario', 'funcionario.id_funcionario', '=', 'unidade_locadora.id_funcionario')
+                ->get();
+        return $result;
+    }
 }
