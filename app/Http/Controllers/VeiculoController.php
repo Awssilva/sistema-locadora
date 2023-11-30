@@ -11,7 +11,7 @@ class VeiculoController extends Controller
         return view('veiculo.consultar');
     }
 
-    public function create_cadastro(){
+    public function createCadastro(){
         return view('veiculo.cadastro');
     }
 
