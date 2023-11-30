@@ -44,7 +44,6 @@
                 <th scope="col">ID</th>
                 <th scope="col">Cidade</th>
                 <th scope="col">Estado</th>
-                <th scope="col">Gerente</th>
                 <th scope="col">Data Cadastro</th>
                 <th scope="col">Ações</th>
             </tr>
@@ -55,7 +54,6 @@
                 <th scope="row">{{$unidadeLocadora->id_unidade_locadora}}</th>
                 <td>{{$unidadeLocadora->cidade}}</td>
                 <td>{{$unidadeLocadora->estado}}</td>
-                <td>{{$unidadeLocadora->nome}}</td>
                 <td>{{date('d/m/Y', strtotime($unidadeLocadora->data_cadastro))}}</td>
                 <td class="d-flex gap-2">
                     <a href="{{ route('unidadeLocadora.editar', $unidadeLocadora->id_unidade_locadora) }}" class="btn btn-secondary acoes" title="Editar">
