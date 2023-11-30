@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="info-section bg-body-tertiary d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center text-center">
-        <h2 class="mb-0"><i class="bi bi-person-fill me-2"></i>Unidades da Locadora</h2>
+        <h2 class="mb-0"><i class="bi bi-building-fill me-2"></i></i>Unidades da Locadora</h2>
         <div class="d-flex gap-2">
             <a href="{{ route('unidadeLocadora.cadastro') }}" class="btn btn-success" id="btnNovounidadeLocadora"><i class="bi bi-building-fill-add"></i></i>Nova Unidade</a>
         </div>

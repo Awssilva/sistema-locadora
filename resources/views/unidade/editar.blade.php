@@ -3,7 +3,7 @@
 @section('content')
 
     <div class="info-section bg-body-tertiary d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center">
-        <h2 class="mb-0"><i class="bi bi-person-fill me-2"></i>Unidade - Editar Cadastro</h2>
+        <h2 class="mb-0"><i class="bi bi-building-fill me-2"></i>Unidade - Editar Cadastro</h2>
         <div class="d-flex gap-2">
             <a href="{{ route('unidadeLocadora.consultar') }}" class="btn btn-danger" id="btnVoltar"><i class="bi bi-arrow-left-circle-fill"></i>Voltar</a>
             <a href="{{ route('unidadeLocadora.cadastro') }}" class="btn btn-success" id="btnNovoCliente"><i class="bi bi-car-front"></i>Novo Funcionário</a>
