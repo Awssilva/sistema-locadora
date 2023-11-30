@@ -19,18 +19,17 @@
                     <label for="cargo" class="form-label col-md-2">Cargo</label>
                     <select class="form-select" id="cargo" name="id_cargo">
                         <option >Selecione o cargo</option>
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
+                        <option value="1">Gerente</option>
+                        <option value="2">Atendente</option>
                     </select>
                 </div>
                 <div class="col-md-6 mb-3">
                     <label for="cargo" class="form-label col-md-2">Unidade</label>
                     <select class="form-select" id="cargo" name="id_unidade_locadora">
                         <option >Selecione a unidade</option>
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
+                        @foreach ($unidadesLocadora as $unidadeLocadora)
+                            <option value={{ $unidadeLocadora->id_unidade_locadora }}> {{ $unidadeLocadora->cidade . ' - ' . $unidadeLocadora->id_unidade_locadora  }}</option>
+                        @endforeach
                     </select>
                 </div>
             </div>
@@ -69,7 +68,7 @@
                 <th scope="row">{{$funcionario->id_funcionario}}</th>
                 <td>{{$funcionario->nome}}</td>
                 <td>{{$funcionario->id_cargo}}</td>
-                <td>{{$funcionario->id_unidade_locadora}}</td>
+                <td>{{$funcionario->cidade . ' - ' . $funcionario->id_unidade_locadora}}</td>
                 <td>{{date('d/m/Y', strtotime($funcionario->data_cadastro))}}</td>
                 <td class="d-flex gap-2">
                     <a href="{{ route('funcionario.editar', $funcionario->id_funcionario) }}" class="btn btn-secondary acoes" title="Editar">
