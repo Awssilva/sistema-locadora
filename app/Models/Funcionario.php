@@ -24,7 +24,8 @@ class Funcionario extends Model
     //Método para retornar todos os registros e informações de funcionarios que que estão registrados em Unidade.
     public static function getFuncionarioJoinUnidadeLocadora()
     {
-        $result = self::join('unidade_locadora', 'funcionario.id_funcionario', '=', 'unidade_locadora.id_funcionario')
+        $result = self::select('funcionario.*', 'unidade_locadora.cidade', 'unidade_locadora.id_unidade_locadora')
+                ->join('unidade_locadora', 'funcionario.id_unidade_locadora', '=', 'unidade_locadora.id_unidade_locadora')
                 ->get();
         return $result;
     }
