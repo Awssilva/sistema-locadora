@@ -6,7 +6,7 @@
         <h2 class="mb-0"><i class="bi bi-building-fill me-2"></i>Unidade - Editar Cadastro</h2>
         <div class="d-flex gap-2">
             <a href="{{ route('unidadeLocadora.consultar') }}" class="btn btn-danger" id="btnVoltar"><i class="bi bi-arrow-left-circle-fill"></i>Voltar</a>
-            <a href="{{ route('unidadeLocadora.cadastro') }}" class="btn btn-success" id="btnNovoCliente"><i class="bi bi-car-front"></i>Novo Funcionário</a>
+            <a href="{{ route('unidadeLocadora.cadastro') }}" class="btn btn-success" id="btnNovounidadeLocadora"><i class="bi bi-building-fill-add"></i></i>Nova Unidade</a>
         </div>
     </div>
     <div class="painel-acoes bg-body-tertiary p-3 info-section">
@@ -26,9 +26,9 @@
                     <label for="gerente" class="form-label col-md-2">Gerente</label>
                     <select class="form-select" id="gerente" name="id_funcionario" value="{{ $unidadeLocadora->id_funcionario}}" required>
                         <option >Selecione um gerente</option>
-                        <option value="1" <?= $unidadeLocadora->id_funcionario == 1 ? "selected" : "" ?>>One</option>
-                        <option value="2" <?= $unidadeLocadora->id_funcionario == 2 ? "selected" : "" ?>>Two</option>
-                        <option value="3" <?= $unidadeLocadora->id_funcionario == 3 ? "selected" : "" ?>>Three</option>
+                        @foreach ($funcionarios as $funcionario)
+                            <option value="{{ $funcionario->id_funcionario }}" <?= $funcionario->id_funcionario ==  $unidadeLocadora->id_funcionario ? "selected" : "" ?>> {{ $funcionario->nome }}</option>
+                        @endforeach
                     </select>
                 </div>
             </div>

@@ -24,9 +24,9 @@
                     <label for="gerente" class="form-label col-md-2">Gerente</label>
                     <select class="form-select" id="gerente" name="id_funcionario">
                         <option >Selecione um gerente</option>
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
+                        @foreach ($funcionarios as $funcionario)
+                            <option value="{{ $funcionario->id_funcionario }}"> {{ $funcionario->nome }}</option>
+                        @endforeach
                     </select>
                 </div>
             </div>

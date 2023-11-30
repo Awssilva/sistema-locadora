@@ -23,9 +23,9 @@
                     <label for="gerente" class="form-label col-md-2">Gerente</label>
                     <select class="form-select" id="gerente" name="id_funcionario">
                         <option >Selecione um gerente</option>
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
+                        @foreach ($funcionarios as $funcionario)
+                            <option value={{ $funcionario->id_funcionario }}> {{ $funcionario->nome }}</option>
+                        @endforeach
                     </select>
                 </div>
             </div>
@@ -63,8 +63,8 @@
             <tr>
                 <th scope="row">{{$unidadeLocadora->id_unidade_locadora}}</th>
                 <td>{{$unidadeLocadora->cidade}}</td>
-                <td>{{$unidadeLocadora->uf}}</td>
-                <td>{{$unidadeLocadora->id_funcionario}}</td>
+                <td>{{$unidadeLocadora->estado}}</td>
+                <td>{{$unidadeLocadora->nome}}</td>
                 <td>{{date('d/m/Y', strtotime($unidadeLocadora->data_cadastro))}}</td>
                 <td class="d-flex gap-2">
                     <a href="{{ route('unidadeLocadora.editar', $unidadeLocadora->id_unidade_locadora) }}" class="btn btn-secondary acoes" title="Editar">
