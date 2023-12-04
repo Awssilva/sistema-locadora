@@ -17,7 +17,7 @@ return new class extends Migration
             $table->bigIncrements('id_locacao');
             $table->integer('id_veiculo');
             $table->integer('id_cliente');
-            $table->integer('id_funcioanario');
+            $table->integer('id_funcionario');
             $table->date('data_saida');
             $table->date('data_devolucao')->nullable();
             $table->integer('quilometragem_saida');

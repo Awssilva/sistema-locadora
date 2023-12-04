@@ -11,7 +11,7 @@ class VeiculoController extends Controller
         return view('veiculo.consultar');
     }
 
-    public function create_cadastro(){
+    public function createCadastro(){
         return view('veiculo.cadastro');
     }
 
@@ -27,20 +27,11 @@ class VeiculoController extends Controller
         $veiculo->marca = $request->marca;
         $veiculo->ano = $request->ano;
         $veiculo->quilometragem = $request->quilometragem;
-        $veiculo ->data_cadastro = date('d/m/Y H:i');
-        //Verifica se o arquivo é do tipo image
-        if($request->hasFile('image') && $request->file('image')->isValid()){
-            $requestImage = $request->imagem_veiculo;
-            $extensao = $requestImage->extension();
-            $nome_imagem = md5($requestImage->getClientOriginalName() . strtotime('now')) . "." . $extensao;
-            $requestImage->move(public_path('img/veiculos'), $nome_imagem);
-            $veiculo->image = $nome_imagem;
-        }
+        $veiculo ->data_cadastro =  date('Y-m-d H:i:s');
                 
-
         $veiculo->save();
 
-        return redirect('veiculo/cadastrar')->with('cadastroRealizado', 'Cadastro realizado com sucesso!');
+        return redirect(route('veiculo.view-menu'))->with('alertaSucesso', 'Cadastro realizado com sucesso!');
     }
 
     public function consultarVeiculo()
@@ -58,12 +49,12 @@ class VeiculoController extends Controller
     {
         $veiculo = $request->all();
         Veiculo::findOrFail($request->id_veiculo)->update($veiculo);
-        return redirect('veiculo/consultar');
+        return redirect(route('veiculo.consultar'))->with('alertaSucesso', 'Cadastro atualizado com sucesso!');
     }
 
     public function deletarVeiculo($id_veiculo)
     {
         Veiculo::findOrFail($id_veiculo)->delete();
-        return redirect('veiculo/consultar');
+        return redirect(route('veiculo.consultar'))->with('alertaSucesso', 'Cadastro atualizado com sucesso!');
     }
 }

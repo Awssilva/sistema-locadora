@@ -15,7 +15,6 @@ return new class extends Migration
     {
         Schema::create('unidade_locadora', function (Blueprint $table) {
             $table->bigIncrements('id_unidade_locadora');
-            $table->integer('id_funcionario');
             $table->string('cidade', 100);
             $table->string('estado', 100);
             $table->date('data_cadastro');
