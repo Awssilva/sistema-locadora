@@ -33,7 +33,10 @@ class ClienteController extends Controller
 
     public function consultarCliente()
     {
-        $clientes = Cliente::all();
+        
+        $nome_cliente = request('nome');
+        $cpf = request('cpf');
+        $clientes = Cliente::getClientesByNomeCpf($nome_cliente, $cpf);
         return view('cliente.consultar', compact('clientes'));
     }
 
