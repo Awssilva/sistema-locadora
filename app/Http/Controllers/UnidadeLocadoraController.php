@@ -18,7 +18,7 @@ class UnidadeLocadoraController extends Controller
     //Método responsável por carregar a View de Cadastro do módulo Unidades.
     public function createCadastro()
     {
-       $funcionarios = Funcionario::getAllFuncionarios();
+       $funcionarios = Funcionario::z();
         return view('unidade.cadastro', compact('funcionarios'));
     }
 
@@ -39,8 +39,13 @@ class UnidadeLocadoraController extends Controller
     //Método responsável por realizar ação de consulta de dados do módulo Unidades.
     public function consultarUnidadeLocadora()
     {
-        $unidadesLocadora = UnidadeLocadora::getAllUnidades();
+        $cidade = request('cidade');
+        $estado = request('estado');
+        $unidadesLocadora = UnidadeLocadora::getAllUnidades($cidade, $estado, $id_unidade_locadora = null);
         $funcionarios = Funcionario::getAllFuncionarios();
+
+
+
         return view('unidade.consultar', compact('unidadesLocadora', 'funcionarios'));
     }
 
