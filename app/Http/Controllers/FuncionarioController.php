@@ -11,14 +11,14 @@ class FuncionarioController extends Controller
     //Método responsável por carregar a View de Consulta do módulo Funcionário.
     public function create()
     {
-        $unidadesLocadora = UnidadeLocadora::getAllUnidades();
+        $unidadesLocadora = UnidadeLocadora::getAllUnidades($cidade = null, $estado = null, $id_unidade_locadora = null );
         return view('funcionario.consultar', compact('unidadesLocadora'));
     }
 
     //Método responsável por carregar a View de Cadastro do módulo Funcinário.
     public function createCadastro()
     {
-        $unidadesLocadora = UnidadeLocadora::getAllUnidades();
+        $unidadesLocadora = UnidadeLocadora::getAllUnidades($cidade = null, $estado = null, $id_unidade_locadora = null );
         return view('funcionario.cadastro', compact('unidadesLocadora'));
     }
 
@@ -41,15 +41,20 @@ class FuncionarioController extends Controller
     //Método responsável por realizar ação de consulta de dados do módulo Funcionário.
     public function consultarFuncionario()
     {
-        $unidadesLocadora = UnidadeLocadora::getAllUnidades();
-        $funcionarios = Funcionario::getFuncionarioJoinUnidadeLocadora();
+
+        $nome_funcionario = request('nome');
+        $id_cargo = request('id_cargo');
+        $id_unidade_locadora = request('id_unidade_locadora');
+        
+        $unidadesLocadora = UnidadeLocadora::getAllUnidades($cidade = null, $estado = null, $id_unidade_locadora);
+        $funcionarios = Funcionario::getFuncionarioJoinUnidadeLocadora($nome_funcionario, $id_cargo, $id_unidade_locadora);
         return view('funcionario.consultar', compact('funcionarios',  'unidadesLocadora'));
     }
     
     //Método responsável por carregar a View de Edição do módulo Funcionário.
     public function editarFuncionario($id_funcionario) {
         $funcionario = Funcionario::findOrFail($id_funcionario);
-        $unidadesLocadora = UnidadeLocadora::getAllUnidades();
+        $unidadesLocadora = UnidadeLocadora::getAllUnidades($cidade = null, $estado = null, $id_unidade_locadora = null );
         return view('funcionario.editar', compact('funcionario', 'unidadesLocadora'));
     }
 
