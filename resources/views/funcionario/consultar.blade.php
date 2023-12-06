@@ -18,15 +18,15 @@
                 <div class="col-md-6 mb-3">
                     <label for="cargo" class="form-label col-md-2">Cargo</label>
                     <select class="form-select" id="cargo" name="id_cargo">
-                        <option >Selecione o cargo</option>
+                        <option value="">Selecione o cargo</option>
                         <option value="1">Gerente</option>
                         <option value="2">Atendente</option>
                     </select>
                 </div>
                 <div class="col-md-6 mb-3">
-                    <label for="cargo" class="form-label col-md-2">Unidade</label>
-                    <select class="form-select" id="cargo" name="id_unidade_locadora">
-                        <option >Selecione a unidade</option>
+                    <label for="id_unidade_locadora" class="form-label col-md-2">Unidade</label>
+                    <select class="form-select" id="id_unidade_locadora" name="id_unidade_locadora">
+                        <option  value="">Selecione a unidade</option>
                         @foreach ($unidadesLocadora as $unidadeLocadora)
                             <option value={{ $unidadeLocadora->id_unidade_locadora }}> {{ $unidadeLocadora->cidade . ' - ' . $unidadeLocadora->id_unidade_locadora  }}</option>
                         @endforeach

@@ -21,12 +21,40 @@ class Funcionario extends Model
         return $result;
     }
 
+    /*
     //Método para retornar todos os registros e informações de funcionarios que que estão registrados em Unidade.
     public static function getFuncionarioJoinUnidadeLocadora()
     {
         $result = self::select('funcionario.*', 'unidade_locadora.cidade', 'unidade_locadora.id_unidade_locadora')
                 ->join('unidade_locadora', 'funcionario.id_unidade_locadora', '=', 'unidade_locadora.id_unidade_locadora')
                 ->get();
+        return $result;
+    }
+    */
+    
+    //Método para retornar todos os registros e informações de funcionarios que que estão registrados em Unidade.
+    public static function getFuncionarioJoinUnidadeLocadora($nome_funcionario, $id_cargo, $id_unidade_locadora)
+    {
+        $query = self::select('funcionario.*', 'unidade_locadora.cidade', 'unidade_locadora.id_unidade_locadora')
+            ->join('unidade_locadora', 'funcionario.id_unidade_locadora', '=', 'unidade_locadora.id_unidade_locadora');
+    
+        // Adiciona condição para nome$nome_funcionario se não for vazio
+        if (!empty($nome_funcionario)) {
+            $query->where('funcionario.nome', 'like', '%' . $nome_funcionario . '%');
+        }
+    
+        // Adiciona condição para ID do cargo se não for vazio
+        if (!empty($id_cargo)) {
+            $query->where('funcionario.id_cargo', '=', $id_cargo);
+        }
+    
+        // Adiciona condição para ID da unidade locadora se não for vazio
+        if (!empty($id_unidade_locadora)) {
+            $query->where('unidade_locadora.id_unidade_locadora', '=', $id_unidade_locadora);
+        }
+    
+        $result = $query->get();
+    
         return $result;
     }
     
