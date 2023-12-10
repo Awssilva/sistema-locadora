@@ -88,4 +88,4 @@ Se você deseja contribuir para este projeto, siga estas etapas:
 ## Licença
 
 Este projeto é licenciado
-- **Outros Repositórios:** [https://github.com/guilhermeaquinop/sistema-locadora][https://github.com/Awssilva/sistema-locadora]
+- **Outros Repositórios:** [https://github.com/guilhermeaquinop/sistema-locadora] [https://github.com/Awssilva/sistema-locadora]
