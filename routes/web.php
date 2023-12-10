@@ -8,6 +8,7 @@ use App\Http\Controllers\VeiculoController;
 use App\Http\Controllers\LocacaoController;
 use App\Http\Controllers\FeedbackController;
 use App\Http\Controllers\CargoController;
+use App\Http\Controllers\DashboardController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -26,7 +27,7 @@ Route::get('/', function () {
 
 
 //Rotas de Autenticação de Usuario
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function() {  return view('dashboard'); })->name('dashboard');
+Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', [DashboardController::class, 'create'])->name('dashboard');
 Route::middleware(['auth:sanctum', 'logout'])->delete('/dashboard', function() {  return view('auth.login'); });
 
 

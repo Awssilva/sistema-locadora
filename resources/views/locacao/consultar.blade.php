@@ -14,19 +14,19 @@
                 <div class="col-md-6 mb-4">
                     <label for="id_cliente" class="form-label col-md-2">Cliente</label>
                     <select class="form-select" id="id_cliente" name="id_cliente" >
-                        <option >Selecione o Cliente</option>
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
+                        <option value="" >Selecione o Cliente</option>
+                        @foreach ($clientes as $cliente )
+                            <option value="{{ $cliente->id_cliente}}"> {{ $cliente->nome }}</option>
+                        @endforeach
                     </select>
                 </div>
                 <div class="col-md-6 mb-4">
                     <label for="id_funcionario" class="form-label col-md-4">Responsável da Locação</label>
                     <select class="form-select" id="id_funcionario" name="id_funcionario" >
-                        <option >Selecione o Funcionário Responsável</option>
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
+                        <option value="">Selecione o Funcionário Responsável</option>
+                        @foreach ($funcionarios as $funcionario )
+                            <option value="{{ $funcionario->id_funcionario}}"> {{ $funcionario->nome}}</option>
+                        @endforeach
                     </select>
                 </div>
                 <div class="col-md-6 mb-4">
@@ -73,7 +73,7 @@
                 <th scope="row">{{$locacao->id_locacao}}</th>
                 <td>{{$locacao->id_cliente}}</td>
                 <td>{{$locacao->id_funcionario}}</td>
-                <td>{{$locacao->data_saida}}</td>
+                <td>{{date('d/m/Y', strtotime($locacao->data_saida))}}</td>
                 <td>{{date('d/m/Y', strtotime($locacao->data_devolucao))}}</td>
                 <td class="d-flex gap-2">
                     <a href="{{ route('locacao.editar', $locacao->id_locacao) }}" class="btn btn-secondary acoes" title="Editar">

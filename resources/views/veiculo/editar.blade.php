@@ -15,15 +15,6 @@
             @method('PUT')
             <div class="mb-3 row">
                 <div class="col-md-6 mb-3">
-                    <label for="id_unidade_locadora" class="form-label col-md-2">Unidade</label>
-                    <select class="form-select" id="id_unidade_locadora" name="id_unidade_locadora">
-                        <option>Selecione a locadora do veículo</option>
-                        <option value="1" <?= $veiculo->id_unidade_locadora == 1 ? "selected" : "" ?>>One</option>
-                        <option value="2" <?= $veiculo->id_unidade_locadora == 2 ? "selected" : "" ?>>Two</option>
-                        <option value="3" <?= $veiculo->id_unidade_locadora == 3 ? "selected" : "" ?>>Three</option>
-                    </select>
-                </div>
-                <div class="col-md-6 mb-3">
                     <label for="nome" class="form-label col-md-2">Nome</label>
                     <input type="text" class="form-control" id="nome" name="nome" value="{{ $veiculo->nome }}" required>
                 </div>
@@ -33,20 +24,26 @@
                 </div>
                 <div class="col-md-6 mb-3">
                     <label for="modelo" class="form-label col-md-2">Modelo</label>
-                    <select class="form-select" id="modelo" name="modelo" required>
-                        <option >Selecione o modelo do veículo</option>
-                        <option value="1" <?= $veiculo->modelo == 1 ? "selected" : "" ?>>One</option>
-                        <option value="2" <?= $veiculo->modelo == 2 ? "selected" : "" ?>>Two</option>
-                        <option value="3" <?= $veiculo->modelo == 3 ? "selected" : "" ?>>Three</option>
+                    <select class="form-select" id="modelo" name="modelo">
+                        <option value="">Selecione o modelo do veículo</option>
+                        <option value="Sedan" <?= $veiculo->modelo == "Sedan" ? "" : "selected"?> >Sedan</option>
+                        <option value="Hatch" <?= $veiculo->modelo == "Hatch" ? "" : "selected"?>>Hatch</option>
+                        <option value="SUV" <?= $veiculo->modelo == "SUV" ? "" : "selected"?>>SUV</option>
+                        <option value="Utilitário" <?= $veiculo->modelo == "Utilitário" ? "" : "selected"?>>Utilitário</option>
+                        <option value="Caminhonete" <?= $veiculo->modelo == "Caminhonete" ? "" : "selected"?>>Caminhonete</option>
                     </select>
                 </div>
                 <div class="col-md-6 mb-3">
                     <label for="marca" class="form-label col-md-2">Marca</label>
-                    <select class="form-select" id="marca" name="marca" required>
-                        <option>Selecione a marca do veículo</option>
-                        <option value="1" <?= $veiculo->marca == 1 ? "selected" : "" ?>>One</option>
-                        <option value="2" <?= $veiculo->marca == 2 ? "selected" : "" ?>>Two</option>
-                        <option value="3" <?= $veiculo->marca == 3 ? "selected" : "" ?>>Three</option>
+                    <select class="form-select" id="marca" name="marca">
+                        <option value="">Selecione a marca do veículo</option>
+                        <option value="Chevrolett"  <?= $veiculo->marca == "Sedan" ? "" : "selected"?>>Chevrolett</option>
+                        <option value="Toyota" <?= $veiculo->marca == "Toyota" ? "" : "selected"?>>Toyota</option>
+                        <option value="Hyundai" <?= $veiculo->marca == "Hyundai" ? "" : "selected"?>>Hyundai</option>
+                        <option value="Volvo" <?= $veiculo->marca == "Volvo" ? "" : "selected"?>>Volvo</option>
+                        <option value="Ford" <?= $veiculo->marca == "Ford" ? "" : "selected"?>>Ford</option>
+                        <option value="Citroen" <?= $veiculo->marca == "Citroen" ? "" : "selected"?>>Citroen</option>
+                        <option value="Renault" <?= $veiculo->marca == "Renault" ? "" : "selected"?>>Renault</option>
                     </select>
                 </div>
                 <div class="col-md-6 mb-3">
@@ -56,6 +53,15 @@
                 <div class="col-md-6 mb-3">
                     <label for="quilometragem" class="form-label col-md-2">Quilometragem</label>
                     <input type="number" class="form-control" id="quilometragem" name="quilometragem" value="{{ $veiculo->quilometragem }}" required>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label for="id_unidade_locadora" class="form-label col-md-2">Unidade</label>
+                    <select class="form-select" id="id_unidade_locadora" name="id_unidade_locadora">
+                        <option value="">Selecione a locadora do veículo</option>
+                        @foreach ($unidadesLocadora as $unidadeLocadora) 
+                            <option value={{ $unidadeLocadora->id_unidade_locadora }} <?= $veiculo->id_veiculo == $unidadeLocadora->id_veiculo ? "selected" : "" ?>> {{ $unidadeLocadora->cidade . ' - ' . $unidadeLocadora->id_unidade_locadora  }}</option>
+                        @endforeach
+                    </select>
                 </div>
             </div>
             <div class="d-flex justify-content-end">
