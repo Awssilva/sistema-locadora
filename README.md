@@ -1,4 +1,4 @@
-# Projeto Laravel
+# Projeto MasterLocadora
 
 Este é um projeto Laravel que foi desenvolvido para o gerenciamento de uma locadora de veículos. Ele inclui ótimos recursos, uma estrutura bem organizada e utiliza boas práticas de desenvolvimento.
 
