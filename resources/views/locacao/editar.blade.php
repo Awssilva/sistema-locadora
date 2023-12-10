@@ -14,31 +14,31 @@
             @csrf
             @method('PUT')
             <div class="mb-3 row">
-                                <div class="col-md-6 mb-4">
+                <div class="col-md-6 mb-4">
                     <label for="id_cliente" class="form-label col-md-2">Cliente</label>
                     <select class="form-select" id="id_cliente" name="id_cliente" required>
-                        <option >Selecione o Cliente</option>
-                        <option value="1" <?= $locacao->id_cliente == 1 ? "selected" : "" ?>>One</option>
-                        <option value="2" <?= $locacao->id_cliente == 2 ? "selected" : "" ?>>Two</option>
-                        <option value="3" <?= $locacao->id_cliente == 3 ? "selected" : "" ?>>Three</option>
+                        <option value="">Selecione o Cliente</option>
+                        @foreach ($clientes as $cliente )
+                            <option value="{{ $cliente->id_cliente}}" <?= $locacao->id_cliente == $cliente->id_cliente ? 'selected' : ""?>> {{ $cliente->nome }}</option>
+                        @endforeach
                     </select>
                 </div>
                 <div class="col-md-6 mb-4">
                     <label for="id_veiculo" class="form-label col-md-2">Veículo</label>
                     <select class="form-select" id="id_veiculo" name="id_veiculo" required>
-                        <option >Selecione o Veiculo</option>
-                        <option value="1" <?= $locacao->id_veiculo == 1 ? "selected" : "" ?>>One</option>
-                        <option value="2" <?= $locacao->id_veiculo == 2 ? "selected" : "" ?>>Two</option>
-                        <option value="3" <?= $locacao->id_veiculo == 3 ? "selected" : "" ?>>Three</option>
+                        <option value="">Selecione o Veiculo</option>
+                        @foreach ($veiculos as $veiculo )
+                            <option value="{{ $veiculo->id_veiculo}}" <?= $locacao->id_veiculo == $veiculo->id_veiculo ? 'selected' : ""?>> {{ $veiculo->nome .' ['. $veiculo->placa .'] ' }}</option>
+                        @endforeach
                     </select>
                 </div>
                 <div class="col-md-6 mb-4">
                     <label for="id_funcionario" class="form-label col-md-4">Responsável da Locação</label>
                     <select class="form-select" id="id_funcionario" name="id_funcionario" required>
-                        <option >Selecione o Funcionário Responsável</option>
-                        <option value="1" <?= $locacao->id_funcionario == 1 ? "selected" : "" ?>>One</option>
-                        <option value="2" <?= $locacao->id_funcionario == 2 ? "selected" : "" ?>>Two</option>
-                        <option value="3" <?= $locacao->id_funcionario == 3 ? "selected" : "" ?>>Three</option>
+                        <option >Selecione o Responsável</option>
+                        @foreach ($funcionarios as $funcionario )
+                            <option value="{{ $funcionario->id_funcionario}}" <?= $locacao->id_funcionario == $funcionario->id_funcionario ? 'selected' : ""?>> {{ $funcionario->nome}}</option>
+                        @endforeach
                     </select>
                 </div>
                 <div class="col-md-6 mb-4">

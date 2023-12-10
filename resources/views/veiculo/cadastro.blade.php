@@ -21,20 +21,26 @@
                 </div>
                 <div class="col-md-6 mb-3">
                     <label for="modelo" class="form-label col-md-2">Modelo</label>
-                    <select class="form-select" id="modelo" name="modelo" required>
-                        <option >Selecione o modelo do veículo</option>
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
+                    <select class="form-select" id="modelo" name="modelo">
+                        <option value="">Selecione o modelo do veículo</option>
+                        <option value="Sedan">Sedan</option>
+                        <option value="Hatch">Hatch</option>
+                        <option value="SUV">SUV</option>
+                        <option value="Utilitário">Utilitário</option>
+                        <option value="Caminhonete">Caminhonete</option>
                     </select>
                 </div>
                 <div class="col-md-6 mb-3">
                     <label for="marca" class="form-label col-md-2">Marca</label>
-                    <select class="form-select" id="marca" name="marca" required>
-                        <option>Selecione a marca do veículo</option>
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
+                    <select class="form-select" id="marca" name="marca">
+                        <option value="">Selecione a marca do veículo</option>
+                        <option value="Chevrolett">Chevrolett</option>
+                        <option value="Toyota">Toyota</option>
+                        <option value="Hyundai">Hyundai</option>
+                        <option value="Volvo">Volvo</option>
+                        <option value="Ford">Ford</option>
+                        <option value="Citroen">Citroen</option>
+                        <option value="Renault">Renault</option>
                     </select>
                 </div>
                 <div class="col-md-6 mb-3">
@@ -48,10 +54,9 @@
                 <div class="col-md-6 mb-3">
                     <label for="id_unidade_locadora" class="form-label col-md-2">Unidade</label>
                     <select class="form-select" aria-label="Selecione locadora do veículo" id="id_unidade_locadora" name="id_unidade_locadora" required>
-                        <option>Selecione a locadora do veículo</option>
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
+                        @foreach ($unidadesLocadora as $unidadeLocadora)
+                            <option value={{ $unidadeLocadora->id_unidade_locadora }}> {{ $unidadeLocadora->cidade . ' - ' . $unidadeLocadora->id_unidade_locadora  }}</option>
+                        @endforeach
                     </select>
                 </div>
             </div>

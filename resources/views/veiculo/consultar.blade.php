@@ -22,19 +22,25 @@
                 <div class="col-md-6 mb-3">
                     <label for="modelo" class="form-label col-md-2">Modelo</label>
                     <select class="form-select" id="modelo" name="modelo">
-                        <option >Selecione o modelo do veículo</option>
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
+                        <option value="">Selecione o modelo do veículo</option>
+                        <option value="Sedan">Sedan</option>
+                        <option value="Hatch">Hatch</option>
+                        <option value="SUV">SUV</option>
+                        <option value="Utilitário">Utilitário</option>
+                        <option value="Caminhonete">Caminhonete</option>
                     </select>
                 </div>
                 <div class="col-md-6 mb-3">
                     <label for="marca" class="form-label col-md-2">Marca</label>
                     <select class="form-select" id="marca" name="marca">
-                        <option>Selecione a marca do veículo</option>
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
+                        <option value="">Selecione a marca do veículo</option>
+                        <option value="Chevrolett">Chevrolett</option>
+                        <option value="Toyota">Toyota</option>
+                        <option value="Hyundai">Hyundai</option>
+                        <option value="Volvo">Volvo</option>
+                        <option value="Ford">Ford</option>
+                        <option value="Citroen">Citroen</option>
+                        <option value="Renault">Renault</option>
                     </select>
                 </div>
             </div>

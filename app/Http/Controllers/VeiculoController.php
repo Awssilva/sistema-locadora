@@ -4,15 +4,19 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Veiculo;
+use App\Models\UnidadeLocadora;
 class VeiculoController extends Controller
 {
 
     public function create(){
-        return view('veiculo.consultar');
+
+        $unidadesLocadora = UnidadeLocadora::getAllUnidades($cidade = null, $estado  = null, $id_unidade_locadora = null);
+        return view('veiculo.consultar', compact('unidadesLocadora'));
     }
 
     public function createCadastro(){
-        return view('veiculo.cadastro');
+        $unidadesLocadora = UnidadeLocadora::getAllUnidades($cidade = null, $estado  = null, $id_unidade_locadora = null);
+        return view('veiculo.cadastro', compact('unidadesLocadora'));
     }
 
     public function cadastrarVeiculo(Request $request)
@@ -37,12 +41,15 @@ class VeiculoController extends Controller
     public function consultarVeiculo()
     {
         $veiculos = Veiculo::all();
-        return view('veiculo.consultar', compact('veiculos'));
+        $unidadesLocadora = UnidadeLocadora::getAllUnidades($cidade = null, $estado  = null, $id_unidade_locadora = null);
+        return view('veiculo.consultar', compact('veiculos', 'unidadesLocadora'));
     }
 
     public function editarVeiculo($id_veiculo) {
+        $unidadesLocadora = UnidadeLocadora::getAllUnidades($cidade = null, $estado  = null, $id_unidade_locadora = null);
         $veiculo = Veiculo::findOrFail($id_veiculo);
-        return view('veiculo.editar', compact('veiculo'));
+
+        return view('veiculo.editar', compact('veiculo', 'unidadesLocadora'));
     }
 
     public function atualizarVeiculo(Request $request) 

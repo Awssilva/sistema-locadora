@@ -14,28 +14,28 @@
                 <div class="col-md-6 mb-4">
                     <label for="id_cliente" class="form-label col-md-2">Cliente</label>
                     <select class="form-select" id="id_cliente" name="id_cliente" required>
-                        <option >Selecione o Cliente</option>
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
+                        <option value="">Selecione o Cliente</option>
+                        @foreach ($clientes as $cliente )
+                            <option value="{{ $cliente->id_cliente}}"> {{ $cliente->nome }}</option>
+                        @endforeach
                     </select>
                 </div>
                 <div class="col-md-6 mb-4">
                     <label for="id_veiculo" class="form-label col-md-2">Veículo</label>
                     <select class="form-select" id="id_veiculo" name="id_veiculo" required>
-                        <option >Selecione o Veiculo</option>
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
+                        <option value="">Selecione o Veiculo</option>
+                        @foreach ($veiculos as $veiculo )
+                            <option value="{{ $veiculo->id_veiculo}}"> {{ $veiculo->nome .' ['. $veiculo->placa .'] ' }}</option>
+                        @endforeach
                     </select>
                 </div>
                 <div class="col-md-6 mb-4">
                     <label for="id_funcionario" class="form-label col-md-4">Responsável da Locação</label>
                     <select class="form-select" id="id_funcionario" name="id_funcionario" required>
-                        <option >Selecione o Veiculo</option>
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
+                        <option value="">Selecione o Responsável</option>
+                        @foreach ($funcionarios as $funcionario )
+                            <option value="{{ $funcionario->id_funcionario}}"> {{ $funcionario->nome}}</option>
+                        @endforeach
                     </select>
                 </div>
                 <div class="col-md-6 mb-4">

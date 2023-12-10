@@ -2,18 +2,30 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Cliente;
+use App\Models\Funcionario;
 use Illuminate\Http\Request;
 use App\Models\Locacao;
+use App\Models\Veiculo;
 
 
 class LocacaoController extends Controller
 {
-    public function create(){
-        return view('locacao.consultar');
+    public function create()
+    {
+
+        $clientes = Cliente::all();
+        $funcionarios = Funcionario::all();
+
+        return view('locacao.consultar', compact('clientes', 'funcionarios'));
     }
 
     public function createCadastro(){
-        return view('locacao.cadastro');
+        $veiculos = Veiculo::all();
+        $funcionarios = Funcionario::all();
+        $clientes = Cliente::all();
+
+        return view('locacao.cadastro', compact('veiculos', 'funcionarios',  'clientes'));
     }
     
     public function cadastrarLocacao(Request $request)
@@ -39,14 +51,27 @@ class LocacaoController extends Controller
 
     public function consultarLocacao()
     {
-        $locacoes = Locacao::all();
-        return view('locacao.consultar', compact('locacoes'));
+        
+        $id_cliente = request('id_cliente');
+        $id_funcionario = request('id_funcionario');
+        $data_retirada = request('data_retirada');
+        $data_devolucao = request('data_devolucao');
+
+        $clientes = Cliente::all();
+        $funcionarios = Funcionario::all();
+
+        $locacoes = Locacao::getLocacoes($id_cliente, $id_funcionario, $data_retirada, $data_devolucao);
+
+        return view('locacao.consultar', compact('locacoes', 'clientes', 'funcionarios'));
     }
 
-    public function editarLocacao($id_locacao) 
+    public function editarLocacao($id_locacao)
     {
+        $veiculos = Veiculo::all();
+        $funcionarios = Funcionario::all();
+        $clientes = Cliente::all();
         $locacao = Locacao::findOrFail($id_locacao);
-        return view('locacao.editar', compact('locacao'));
+        return view('locacao.editar', compact('locacao', 'veiculos', 'funcionarios',  'clientes'));
     }
 
     public function atualizarLocacao(Request $request) 
